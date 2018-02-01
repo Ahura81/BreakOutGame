@@ -1,0 +1,11 @@
+* {
+	margin: 0px;
+	padding: 0;
+}
+
+canvas {
+	background-color: green;
+	display: block;
+	margin:0 auto;
+}
+
