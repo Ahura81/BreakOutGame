@@ -62,9 +62,12 @@ function draw() {
 	//movement
 	x += dx;
 	y += dy;
-	//bouncing on bottom || top ceiling 
-	if(y + dy > canvas.height - ballRadius|| y + dy < ballRadius) {
+	//bouncing on top ceiling  die hitting 
+	if(y + dy < ballRadius) {
 		dy = -dy;
+	} else if (y + dy > canvas.height){
+		alert("Game over!");
+		document.location.reload();
 	}
 	//bouncing of right || left wall
 	if(x + dx > canvas.width - ballRadius|| x + dx < ballRadius) {
@@ -75,8 +78,8 @@ function draw() {
 		shelfX += 7;
 
 	//shelfMove left
-	} else if(leftPressed && shelfX > 0)
-		shelfX -= 7;
+} else if(leftPressed && shelfX > 0)
+shelfX -= 7;
 }
 
 
