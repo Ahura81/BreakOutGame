@@ -65,10 +65,18 @@ function draw() {
 	//bouncing on top ceiling  die hitting 
 	if(y + dy < ballRadius) {
 		dy = -dy;
-	} else if (y + dy > canvas.height){
+	} else if (y + dy > canvas.height - ballRadius){
+		if (x > shelfX && x < shelfX + shelfWidth){
+			dy = -dy;
+		} 
+
+		else if (y + dy > canvas.height){
+
 		alert("Game over!");
 		document.location.reload();
+		}
 	}
+
 	//bouncing of right || left wall
 	if(x + dx > canvas.width - ballRadius|| x + dx < ballRadius) {
 		dx = -dx;
